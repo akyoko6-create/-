@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как компании по видеонаблюдению выйти на 5–15 млн ₸/мес | Казахстан</title>
+    <meta name="description" content="Узнайте, как компании по продаже и монтажу камер видеонаблюдения в Казахстане выстраивают систему и выходят на корпоративных клиентов. Стратегическая консультация с гарантией.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #1A56DB;
+            --blue-light: #3B82F6;
+            --blue-pale: #EFF6FF;
+            --green: #059669;
+            --green-pale: #ECFDF5;
+            --red: #DC2626;
+            --red-pale: #FEF2F2;
+            --yellow: #D97706;
+            --yellow-pale: #FFFBEB;
+            --text: #111827;
+            --text2: #374151;
+            --text3: #6B7280;
+            --border: #E5E7EB;
+            --bg: #FFFFFF;
+            --bg2: #F9FAFB;
+            --bg3: #F3F4F6;
+            --r: 12px;
+            --shadow: 0 1px 3px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── PROGRESS BAR ─── */
+        #progress {
+            position: fixed; top: 0; left: 0; height: 3px;
+            background: linear-gradient(90deg, var(--blue), var(--blue-light));
+            z-index: 9999; width: 0; transition: width .1s linear;
+        }
+
+        /* ─── STICKY NAV ─── */
+        .nav {
+            position: sticky; top: 0;
+            background: rgba(255,255,255,.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 20px;
+            display: flex; align-items: center; justify-content: space-between;
+            z-index: 200;
+        }
+        .nav-logo { font-size: 15px; font-weight: 800; color: var(--blue); }
+        .nav-cta {
+            background: var(--blue); color: #fff;
+            border: none; padding: 9px 20px;
+            border-radius: 8px; font-weight: 700; font-size: 13px;
+            cursor: pointer; transition: background .15s, transform .1s;
+            font-family: inherit;
+        }
+        .nav-cta:hover { background: #1447C0; transform: scale(1.02); }
+
+        /* ─── LAYOUT ─── */
+        .section { padding: 72px 20px; }
+        .section-sm { padding: 48px 20px; }
+        .section-gray { background: var(--bg2); }
+        .section-blue { background: var(--blue); }
+        .container { max-width: 960px; margin: 0 auto; }
+        .container-sm { max-width: 700px; margin: 0 auto; }
+
+        h1 { font-size: clamp(26px, 5vw, 52px); font-weight: 900; line-height: 1.1; }
+        h2 { font-size: clamp(22px, 3.5vw, 36px); font-weight: 800; line-height: 1.2; }
+        h3 { font-size: 18px; font-weight: 700; }
+
+        /* ─── HERO ─── */
+        .hero {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 40%, #f0fdf4 100%);
+            padding: 64px 20px 56px;
+            border-bottom: 1px solid var(--border);
+        }
+        .hero-inner {
+            max-width: 960px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 380px; gap: 48px; align-items: center;
+        }
+        @media(max-width:768px) { .hero-inner { grid-template-columns:1fr; } }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: #DBEAFE; color: var(--blue);
+            padding: 6px 14px; border-radius: 100px;
+            font-size: 12px; font-weight: 700; margin-bottom: 20px;
+            text-transform: uppercase; letter-spacing: .8px;
+        }
+        .hero h1 { margin-bottom: 20px; }
+        .hero h1 em { color: var(--blue); font-style: normal; }
+        .hero-sub { font-size: 17px; color: var(--text2); margin-bottom: 32px; max-width: 540px; }
+        .hero-promise {
+            background: white; border: 2px solid var(--blue);
+            border-radius: var(--r); padding: 16px 20px;
+            margin-bottom: 28px;
+        }
+        .hero-promise-label { font-size: 11px; color: var(--blue); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .hero-promise-text { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.5; }
+        .hero-image {
+            border-radius: 16px; overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        .hero-image img { width: 100%; display: block; }
+        .hero-stats { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+        .hero-stat { }
+        .hero-stat-n { font-size: 28px; font-weight: 900; color: var(--blue); }
+        .hero-stat-l { font-size: 12px; color: var(--text3); }
+
+        /* ─── BUTTONS ─── */
+        .btn {
+            display: inline-block; background: var(--blue); color: white;
+            padding: 15px 32px; border-radius: var(--r);
+            font-size: 15px; font-weight: 800; cursor: pointer;
+            border: none; transition: all .2s; font-family: inherit;
+            text-decoration: none;
+        }
+        .btn:hover { background: #1447C0; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,86,219,.35); }
+        .btn-lg { padding: 18px 40px; font-size: 17px; }
+        .btn-full { width: 100%; text-align: center; }
+        .btn-white {
+            background: white; color: var(--blue);
+            border: 2px solid white;
+        }
+        .btn-white:hover { background: #EFF6FF; box-shadow: 0 8px 25px rgba(255,255,255,.3); }
+        .pulse { animation: pulse 2.5s infinite; }
+        @keyframes pulse {
+            0%,100% { box-shadow: 0 0 0 0 rgba(26,86,219,.4); }
+            50% { box-shadow: 0 0 0 10px rgba(26,86,219,0); }
+        }
+
+        /* ─── CARDS ─── */
+        .card {
+            background: white; border: 1px solid var(--border);
+            border-radius: var(--r); padding: 24px;
+            box-shadow: var(--shadow);
+        }
+        .card-blue { border-color: #BFDBFE; background: var(--blue-pale); }
+        .card-green { border-color: #A7F3D0; background: var(--green-pale); }
+        .card-red { border-color: #FECACA; background: var(--red-pale); }
+        .card-yellow { border-color: #FDE68A; background: var(--yellow-pale); }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+        @media(max-width:768px) { .grid-2,.grid-3 { grid-template-columns: 1fr; } }
+
+        /* ─── SECTION LABEL ─── */
+        .section-label {
+            display: inline-block;
+            background: var(--blue-pale); color: var(--blue);
+            padding: 5px 14px; border-radius: 100px;
+            font-size: 12px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: .8px;
+            margin-bottom: 14px;
+        }
+
+        /* ─── PAIN ITEMS ─── */
+        .pain { display: flex; gap: 12px; align-items: flex-start; padding: 16px; border-radius: var(--r); background: var(--red-pale); border: 1px solid #FECACA; margin-bottom: 10px; }
+        .pain-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+        .pain strong { display: block; font-size: 15px; margin-bottom: 3px; }
+        .pain p { font-size: 14px; color: var(--text2); margin: 0; }
+
+        /* ─── MECHANISM STEPS ─── */
+        .step { display: flex; gap: 16px; align-items: flex-start; padding: 20px; background: white; border: 1px solid var(--border); border-radius: var(--r); margin-bottom: 10px; }
+        .step-num {
+            width: 40px; height: 40px; flex-shrink: 0;
+            background: var(--blue); color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 900; font-size: 16px;
+        }
+        .step-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+        .step-what { font-size: 13px; color: var(--text3); margin-bottom: 6px; }
+        .step-result { font-size: 13px; color: var(--green); font-weight: 600; }
+
+        /* ─── TARIFF BLOCK ─── */
+        .tariff {
+            border: 2px solid var(--blue);
+            border-radius: 20px; padding: 36px;
+            background: white; max-width: 600px; margin: 0 auto;
+            box-shadow: var(--shadow-xl);
+        }
+        .tariff-label { font-size: 11px; color: var(--blue); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .tariff-title { font-size: 22px; font-weight: 900; margin-bottom: 24px; }
+        .tariff-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; font-size: 15px; }
+        .tariff-item::before { content: '✓'; color: var(--green); font-weight: 900; flex-shrink: 0; font-size: 16px; line-height: 1.5; }
+        .tariff-price-wrap { margin: 24px 0; text-align: center; }
+        .tariff-old { font-size: 16px; color: var(--text3); text-decoration: line-through; }
+        .tariff-price { font-size: 56px; font-weight: 900; color: var(--text); line-height: 1; }
+        .tariff-price small { font-size: 24px; font-weight: 700; vertical-align: super; }
+        .tariff-note { font-size: 13px; color: var(--text3); }
+
+        /* ─── BONUS CARDS ─── */
+        .bonus { background: var(--yellow-pale); border: 1px solid #FDE68A; border-radius: var(--r); padding: 20px; margin-bottom: 10px; }
+        .bonus-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--yellow); letter-spacing: .8px; margin-bottom: 6px; }
+        .bonus-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+        .bonus-desc { font-size: 13px; color: var(--text2); }
+        .bonus-val { font-size: 12px; color: var(--green); font-weight: 700; margin-top: 6px; }
+
+        /* ─── TRANSFORMATION ─── */
+        .transform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+        @media(max-width:600px) { .transform-grid { grid-template-columns: 1fr; } }
+        .transform-red { background: #FEF2F2; border: 1px solid #FECACA; border-radius: var(--r); padding: 24px; }
+        .transform-green { background: var(--green-pale); border: 1px solid #A7F3D0; border-radius: var(--r); padding: 24px; }
+        .transform-head { font-weight: 800; font-size: 15px; margin-bottom: 14px; }
+        .transform-list { list-style: none; }
+        .transform-list li { padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,.06); font-size: 14px; }
+        .transform-list li:last-child { border-bottom: none; }
+
+        /* ─── GUARANTEE ─── */
+        .guarantee {
+            background: linear-gradient(135deg, #1A56DB, #2563EB);
+            border-radius: 20px; padding: 40px; color: white; text-align: center;
+            max-width: 700px; margin: 0 auto;
+        }
+
+        /* ─── QUIZ MODAL ─── */
+        .modal-wrap {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,.6); z-index: 1000;
+            align-items: center; justify-content: center;
+            padding: 20px; backdrop-filter: blur(4px);
+        }
+        .modal-wrap.open { display: flex; }
+        .modal {
+            background: white; border-radius: 20px;
+            padding: 36px; max-width: 580px; width: 100%;
+            position: relative; max-height: 92vh; overflow-y: auto;
+        }
+        .modal-x { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--text3); }
+        .quiz-step { display: none; }
+        .quiz-step.on { display: block; }
+        .quiz-prog { height: 5px; background: var(--bg3); border-radius: 100px; margin-bottom: 24px; overflow: hidden; }
+        .quiz-bar { height: 100%; background: linear-gradient(90deg, var(--blue), var(--blue-light)); border-radius: 100px; transition: width .4s ease; }
+        .quiz-label { font-size: 12px; color: var(--text3); font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+        .quiz-q { font-size: 19px; font-weight: 800; margin-bottom: 18px; }
+        .opt { border: 2px solid var(--border); border-radius: 10px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; font-size: 15px; font-weight: 500; transition: all .2s; }
+        .opt:hover { border-color: var(--blue); background: var(--blue-pale); color: var(--blue); }
+        .form-inp { width: 100%; padding: 13px 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 16px; font-family: inherit; outline: none; margin-bottom: 14px; transition: border-color .2s; }
+        .form-inp:focus { border-color: var(--blue); }
+        .form-hint { font-size: 12px; color: var(--text3); text-align: center; margin-top: 8px; }
+        .success-state { display: none; text-align: center; padding: 20px; }
+        .success-state.on { display: block; }
+
+        /* ─── STICKY BOTTOM CTA ─── */
+        .sticky-bottom {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: white; border-top: 1px solid var(--border);
+            padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 14px;
+            z-index: 100; transform: translateY(100%); transition: transform .3s ease;
+            box-shadow: 0 -4px 16px rgba(0,0,0,.08);
+        }
+        .sticky-bottom.show { transform: translateY(0); }
+        .sticky-bottom-text { font-size: 13px; font-weight: 600; color: var(--text2); }
+        .sticky-bottom-text span { color: var(--green); }
+
+        /* ─── PROOF BLOCK ─── */
+        .proof { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r); padding: 20px; }
+        .proof-num { font-size: 36px; font-weight: 900; color: var(--blue); }
+        .proof-label { font-size: 13px; color: var(--text3); }
+
+        /* ─── COMPARE TABLE ─── */
+        .compare { border-collapse: collapse; width: 100%; border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow); }
+        .compare th { background: var(--bg3); padding: 12px 16px; text-align: left; font-size: 13px; font-weight: 700; color: var(--text2); border-bottom: 1px solid var(--border); }
+        .compare th:first-child { width: 40%; }
+        .compare td { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .compare tr:last-child td { border-bottom: none; }
+        .compare .bad { color: var(--red); font-weight: 600; }
+        .compare .good { color: var(--green); font-weight: 600; }
+
+        /* ─── FADE IN ─── */
+        .fade { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+        .fade.in { opacity: 1; transform: translateY(0); }
+
+        /* ─── PS BLOCKS ─── */
+        .ps { padding: 16px 20px; border-left: 4px solid; border-radius: 0 var(--r) var(--r) 0; margin-bottom: 12px; }
+        .ps-blue { border-color: var(--blue); background: var(--blue-pale); }
+        .ps-green { border-color: var(--green); background: var(--green-pale); }
+
+        /* MISC */
+        .text-center { text-align: center; }
+        .mt-2 { margin-top: 8px; }
+        .mt-4 { margin-top: 16px; }
+        .mt-6 { margin-top: 24px; }
+        .mt-8 { margin-top: 32px; }
+        .mb-2 { margin-bottom: 8px; }
+        .mb-4 { margin-bottom: 16px; }
+        .text-blue { color: var(--blue); }
+        .text-green { color: var(--green); }
+        .text-red { color: var(--red); }
+        .text-muted { color: var(--text3); }
+        .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+        @media(max-width:480px) {
+            .tariff { padding: 24px 16px; }
+            .modal { padding: 24px 16px; }
+            .guarantee { padding: 28px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- NAV -->
+<nav class="nav">
+    <div class="nav-logo">📷 Камера на Миллион</div>
+    <button class="nav-cta" onclick="openQ()">Записаться</button>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     ШАГ 1 — БОЛЬШОЕ ОБЕЩАНИЕ (HERO)
+═══════════════════════════════════════════ -->
+<section class="hero">
+    <div class="hero-inner">
+        <div>
+            <div class="hero-badge">🇰🇿 Только для Казахстана · Ниша видеонаблюдения</div>
+            <h1>Кто ещё хочет <em>стабильный поток</em> корпоративных заявок без сарафана?</h1>
+            <p class="hero-sub">Увеличьте выручку вашей компании по видеонаблюдению в 3–10 раз за 90 дней — с системой, 3 каналами привлечения B2B клиентов и декомпозицией цели до 15 млн ₸/мес. Гарантия 100%.</p>
+
+            <div class="hero-promise">
+                <div class="hero-promise-label">Большое обещание</div>
+                <div class="hero-promise-text">Выстроите систему, которая приносит 8–15 заявок от B2B клиентов ежемесячно, загружает монтажников на 100% и даёт предсказуемую выручку — без зависимости от рекомендаций.</div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-n">90</div>
+                    <div class="hero-stat-l">дней до результата</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-n">×3–10</div>
+                    <div class="hero-stat-l">рост выручки</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-n">100%</div>
+                    <div class="hero-stat-l">гарантия возврата</div>
+                </div>
+            </div>
+
+            <button class="btn btn-lg pulse" onclick="openQ()">ПОЛУЧИТЬ СТРАТЕГИЮ РОСТА →</button>
+            <p class="mt-2" style="font-size:12px; color:var(--text3);">Консультация — 25 000 ₸ · Осталось мест в этом месяце: <strong style="color:var(--red);">5 из 7</strong></p>
+        </div>
+
+        <div class="hero-image">
+            <img src="C:\Users\Ramazan\.gemini\antigravity-ide\brain\143aa653-9caa-428f-970a-f7af4a3c3c34\hero_cameras_kz_1781818119822.png" alt="Система привлечения клиентов для компаний по видеонаблюдению" onerror="this.parentElement.style.background='linear-gradient(135deg,#1A56DB,#3B82F6)';this.style.display='none'">
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     БОЛИ АУДИТОРИИ
+═══════════════════════════════════════════ -->
+<section class="section section-gray">
+    <div class="container">
+        <div class="text-center mb-4 fade">
+            <div class="section-label">Узнаёте себя?</div>
+            <h2>Вы делаете эти всем известные ошибки<br>в маркетинге видеонаблюдения?</h2>
+            <p class="mt-2 text-muted" style="max-width:600px;margin-left:auto;margin-right:auto;">Прочитайте — если 3 пункта совпадают, у вас есть скрытые точки роста стоимостью в миллионы.</p>
+        </div>
+
+        <div class="fade">
+            <div class="pain">
+                <div class="pain-icon">😩</div>
+                <div>
+                    <strong>«Живём только на сарафане» — стабильности нет</strong>
+                    <p>Когда рекомендации молчат 2 месяца — вы не знаете, откуда придут следующие объекты. Нет системы — нет предсказуемости. Нет предсказуемости — нет роста.</p>
+                </div>
+            </div>
+            <div class="pain">
+                <div class="pain-icon">💸</div>
+                <div>
+                    <strong>«Запускали рекламу — слили бюджет, заявок нет»</strong>
+                    <p>Таргетолог сделал «что-то в Instagram», показал красивые охваты — а реальных заявок от корпоративных клиентов не пришло. Деньги потрачены, результат нулевой.</p>
+                </div>
+            </div>
+            <div class="pain">
+                <div class="pain-icon">🏢</div>
+                <div>
+                    <strong>«Хотим работать с заводами, ТЦ, ЖК — не знаем как зайти»</strong>
+                    <p>B2B клиенты платят в 5–20 раз больше физлиц. Но «Камеры от 15 000 тг» в Instagram до них не доходит — у них другой язык, другие критерии выбора, другая воронка.</p>
+                </div>
+            </div>
+            <div class="pain">
+                <div class="pain-icon">📉</div>
+                <div>
+                    <strong>«Конкуренты демпингуют — приходится снижать цены»</strong>
+                    <p>Когда нет чёткого УТП и позиционирования — клиент выбирает по одному критерию: цена. Вы работаете на грани рентабельности, а конкурент забирает маржу.</p>
+                </div>
+            </div>
+            <div class="pain">
+                <div class="pain-icon">😰</div>
+                <div>
+                    <strong>«Монтажники простаивают — плачу зарплату впустую»</strong>
+                    <p>Команда есть, оборудование есть — объектов нет. Каждый пустой месяц = 500 000–2 000 000 ₸ упущенной прибыли. И это только прямые потери, не считая морального давления.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-blue fade mt-6 text-center" style="max-width:720px;margin:24px auto 0;">
+            <p style="font-size:17px;font-weight:700;">Узнали себя в 2–3 пунктах?<br>Значит, у вас есть скрытые точки роста — и мы найдём их на консультации.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ТРИ ВАРИАНТА БУДУЩЕГО (ПРОДОЛЖЕНИЕ БОЛЕЙ)
+═══════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div class="text-center fade mb-4">
+            <div class="section-label">Два пути</div>
+            <h2>Что будет, если ничего не менять?</h2>
+        </div>
+
+        <div class="transform-grid fade">
+            <div class="transform-red">
+                <div class="transform-head">🔴 Оставить как есть</div>
+                <ul class="transform-list">
+                    <li>❌ Сарафан молчит — объектов нет</li>
+                    <li>❌ Реклама сжигает деньги без результата</li>
+                    <li>❌ Монтажники простаивают</li>
+                    <li>❌ Конкуренты уводят крупные объекты</li>
+                    <li>❌ Физлица с маленьким чеком</li>
+                    <li>❌ Нет роста. Нет понимания что делать</li>
+                </ul>
+            </div>
+            <div class="transform-green">
+                <div class="transform-head">🟢 Построить систему</div>
+                <ul class="transform-list">
+                    <li>✓ 8–15 заявок от B2B ежемесячно</li>
+                    <li>✓ Средний чек 300К–1,5 млн ₸</li>
+                    <li>✓ Монтажники загружены на 100%</li>
+                    <li>✓ Реклама окупается ×5–15</li>
+                    <li>✓ Предсказуемая выручка</li>
+                    <li>✓ Очередь из объектов на 2 месяца вперёд</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card fade mt-6" style="max-width:720px;margin:20px auto 0;background:var(--bg2);">
+            <p style="font-size:15px;line-height:1.7;color:var(--text2);margin:0;">
+                <strong>И однажды утром вы открываете телефон</strong> — а там уже 3 новые заявки от компаний. Не физлица «узнать цену», а директор склада, управляющий ресторанной сети и HR-директор офиса. Все готовы к встрече в этом месяце.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ШАГ 2 — МЕХАНИЗМ РЕШЕНИЯ
+═══════════════════════════════════════════ -->
+<section class="section section-gray">
+    <div class="container">
+        <div class="text-center fade mb-4">
+            <div class="section-label">Как это работает</div>
+            <h2>Механизм «Камера на Миллион» —<br>как получить результат за 90 дней</h2>
+            <p class="mt-2 text-muted">Не теория. Конкретный алгоритм действий под ваш бизнес.</p>
+        </div>
+
+        <div class="fade">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div>
+                    <div class="step-title">Диагностика и аудит</div>
+                    <div class="step-what">Что делаем: разбираем текущую ситуацию — откуда идут клиенты, где теряются заявки, почему реклама не работает, какой сегмент приносит максимум прибыли</div>
+                    <div class="step-result">→ Результат: ясная картина где деньги лежат прямо сейчас</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div>
+                    <div class="step-title">Позиционирование и УТП</div>
+                    <div class="step-what">Что делаем: создаём предложение, от которого не отказываются. Отстраиваемся от конкурентов без снижения цен. Определяем для кого мы «лучшие» и почему</div>
+                    <div class="step-result">→ Результат: вы перестаёте конкурировать по цене — клиенты выбирают вас</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div>
+                    <div class="step-title">Стратегия каналов привлечения B2B</div>
+                    <div class="step-what">Что делаем: определяем 2–3 рабочих канала под ваш город и сегмент (Instagram, Google, LinkedIn, холодные звонки, обходы, тендеры) — без слива бюджета на тесты</div>
+                    <div class="step-result">→ Результат: знаете куда вложить 100 000 ₸ чтобы получить 500 000–1 000 000 ₸</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div>
+                    <div class="step-title">Воронка продаж и скрипты</div>
+                    <div class="step-what">Что делаем: выстраиваем путь клиента от первого касания до подписания договора. Пишем скрипты обработки заявок, дожима, возражений</div>
+                    <div class="step-result">→ Результат: конверсия в сделку растёт до 35–50%</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">5</div>
+                <div>
+                    <div class="step-title">Декомпозиция цели на 90 дней</div>
+                    <div class="step-what">Что делаем: считаем математику вашей цели — сколько нужно объектов, заявок, показов рекламы, встреч. Прогноз выручки с конкретными цифрами</div>
+                    <div class="step-result">→ Результат: пошаговый план на 90 дней с конкретными KPI и датами</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ТРАНСФОРМАЦИЯ / КЕЙСЫ БЕЗ СКРИНОВ
+═══════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div class="text-center fade mb-4">
+            <div class="section-label">Точка А → Точка Б</div>
+            <h2>Как выглядит трансформация<br>изнутри — в цифрах</h2>
+            <p class="mt-2 text-muted">Вместо скриншотов — логика результата. Потому что цифры говорят лучше.</p>
+        </div>
+
+        <div class="grid-3 fade">
+            <div class="card">
+                <div style="font-size:11px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;">Кейс — Алматы · Офисы и ритейл</div>
+                <div style="font-size:13px;color:var(--text3);margin-bottom:8px;"><span style="color:var(--red);font-weight:600;">Точка А:</span> 3–4 заявки/мес от физлиц, средний чек 65 000 ₸, реклама в Instagram не работала 4 месяца.</div>
+                <div style="font-size:13px;color:var(--text3);margin-bottom:12px;"><span style="color:var(--green);font-weight:600;">Точка Б:</span> Изменили оффер под ритейл, запустили Google Ads на директоров. Через 60 дней — 9 корпоративных заявок, средний чек 380 000 ₸.</div>
+                <div style="background:var(--green-pale);border:1px solid #A7F3D0;border-radius:8px;padding:10px;text-align:center;font-size:18px;font-weight:900;color:#065f46;">+3,4 млн ₸ за 2 месяца</div>
+            </div>
+            <div class="card">
+                <div style="font-size:11px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;">Кейс — Астана · Жилые комплексы</div>
+                <div style="font-size:13px;color:var(--text3);margin-bottom:8px;"><span style="color:var(--red);font-weight:600;">Точка А:</span> Хотели выйти на КСК и управляющие компании ЖК, не было понимания где их найти и что им предложить.</div>
+                <div style="font-size:13px;color:var(--text3);margin-bottom:12px;"><span style="color:var(--green);font-weight:600;">Точка Б:</span> Разработали оффер «под ЖК», запустили точечную рекламу на управляющих. Первый контракт — 40 подъездов, 3 400 000 ₸.</div>
+                <div style="background:var(--green-pale);border:1px solid #A7F3D0;border-radius:8px;padding:10px;text-align:center;font-size:18px;font-weight:900;color:#065f46;">1 контракт на 3,4 млн ₸</div>
+            </div>
+            <div class="card">
+                <div style="font-size:11px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;">Кейс — Шымкент · Промышленность</div>
+                <div style="font-size:13px;color:var(--text3);margin-bottom:8px;"><span style="color:var(--red);font-weight:600;">Точка А:</span> Выручка 1,5 млн/мес, всё через старых клиентов. Пробовали таргет — потеряли 280 000 ₸ и 0 корпоративных заявок.</div>
+                <div style="font-size:13px;color:var(--text3);margin-bottom:12px;"><span style="color:var(--green);font-weight:600;">Точка Б:</span> Перестроили позиционирование на промышленный сегмент. Первый завод — 1 200 000 ₸. Через 3 мес — 2–3 крупных объекта ежемесячно.</div>
+                <div style="background:var(--green-pale);border:1px solid #A7F3D0;border-radius:8px;padding:10px;text-align:center;font-size:18px;font-weight:900;color:#065f46;">×4 к выручке за квартал</div>
+            </div>
+        </div>
+
+        <div style="margin-top:28px;" class="fade">
+            <img src="C:\Users\Ramazan\.gemini\antigravity-ide\brain\143aa653-9caa-428f-970a-f7af4a3c3c34\point_a_to_b_1781818128151.png"
+                 alt="Трансформация точка А к точке Б"
+                 style="width:100%;max-width:700px;display:block;margin:0 auto;border-radius:16px;box-shadow:var(--shadow-xl);"
+                 onerror="this.style.display='none'">
+        </div>
+
+        <div class="text-center mt-6 fade">
+            <button class="btn btn-lg pulse" onclick="openQ()">ХОЧУ ТАКОЙ РЕЗУЛЬТАТ →</button>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ШАГ 3 — ВЫГОДЫ О СЕРВИСЕ
+═══════════════════════════════════════════ -->
+<section class="section section-gray">
+    <div class="container">
+        <div class="text-center fade mb-4">
+            <div class="section-label">Почему это работает</div>
+            <h2>Секрет того, как выйти на B2B<br>в нише видеонаблюдения прост</h2>
+        </div>
+
+        <div class="grid-2 fade">
+            <div class="card">
+                <div style="font-size:28px;margin-bottom:10px;">🎯</div>
+                <h3 style="margin-bottom:8px;">Нишевая специализация</h3>
+                <p style="font-size:14px;color:var(--text2);">Я работаю только с нишей безопасности и видеонаблюдения в Казахстане. Это значит — я знаю, что работает именно здесь, именно сейчас, без дорогих экспериментов за ваш счёт.</p>
+            </div>
+            <div class="card">
+                <div style="font-size:28px;margin-bottom:10px;">🔬</div>
+                <h3 style="margin-bottom:8px;">Только проверенные инструменты</h3>
+                <p style="font-size:14px;color:var(--text2);">Никаких «модных трендов» без доказательств. Только то, что уже принесло реальные результаты в похожих компаниях. Покажу конкретные рекламные связки, скрипты и офферы.</p>
+            </div>
+            <div class="card">
+                <div style="font-size:28px;margin-bottom:10px;">💬</div>
+                <h3 style="margin-bottom:8px;">Лично со мной — не с менеджером</h3>
+                <p style="font-size:14px;color:var(--text2);">2 часа один на один. Разбираем именно вашу компанию, ваш город, ваш сегмент. Не шаблонные советы — персональная стратегия.</p>
+            </div>
+            <div class="card">
+                <div style="font-size:28px;margin-bottom:10px;">📋</div>
+                <h3 style="margin-bottom:8px;">Документация и поддержка</h3>
+                <p style="font-size:14px;color:var(--text2);">После консультации получаете письменный план, шаблоны скриптов и доступ в рабочую группу для вопросов в течение 14 дней.</p>
+            </div>
+        </div>
+
+        <!-- СРАВНЕНИЕ -->
+        <div class="fade mt-8">
+            <h3 class="text-center mb-4">Почему обычный маркетолог не даст такой результат</h3>
+            <div style="overflow-x:auto;">
+                <table class="compare">
+                    <thead>
+                        <tr>
+                            <th>Критерий</th>
+                            <th style="text-align:center;color:var(--red);">Обычный таргетолог</th>
+                            <th style="text-align:center;color:var(--green);">Консультация со мной</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Знание ниши видеонаблюдения</td>
+                            <td class="bad" style="text-align:center;">Общие знания</td>
+                            <td class="good" style="text-align:center;">Специализация</td>
+                        </tr>
+                        <tr>
+                            <td>Стратегия привлечения B2B</td>
+                            <td class="bad" style="text-align:center;">Instagram на «всех»</td>
+                            <td class="good" style="text-align:center;">Точечно под сегмент</td>
+                        </tr>
+                        <tr>
+                            <td>Понимание воронки продаж</td>
+                            <td class="bad" style="text-align:center;">Только трафик</td>
+                            <td class="good" style="text-align:center;">Полный цикл</td>
+                        </tr>
+                        <tr>
+                            <td>Ответственность за результат</td>
+                            <td class="bad" style="text-align:center;">Нет гарантий</td>
+                            <td class="good" style="text-align:center;">Возврат 100%</td>
+                        </tr>
+                        <tr>
+                            <td>Стоимость</td>
+                            <td class="bad" style="text-align:center;">100–300К ₸/мес</td>
+                            <td class="good" style="text-align:center;">25 000 ₸ разово</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     КТО Я
+═══════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div style="display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start;" class="fade">
+            <div>
+                <div style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow-xl);background:linear-gradient(135deg,#EFF6FF,#DBEAFE);">
+                    <img src="C:\Users\Ramazan\.gemini\antigravity-ide\brain\143aa653-9caa-428f-970a-f7af4a3c3c34\consultant_portrait_1781818138809.png"
+                         alt="Рамазан — маркетолог в нише видеонаблюдения Казахстан"
+                         style="width:100%;display:block;"
+                         onerror="this.style.display='none';this.parentElement.style.padding='60px 20px';this.parentElement.innerHTML='<div style=\'text-align:center;font-size:72px\'>👨‍💼</div><div style=\'text-align:center;font-weight:800;color:#1A56DB;margin-top:8px\'>Рамазан</div><div style=\'text-align:center;font-size:13px;color:#6B7280\'>Маркетолог · KZ</div>'">
+                </div>
+                <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:6px;">
+                    <span style="font-size:12px;background:var(--blue-pale);color:var(--blue);padding:4px 10px;border-radius:6px;font-weight:600;">5+ лет в маркетинге</span>
+                    <span style="font-size:12px;background:var(--green-pale);color:var(--green);padding:4px 10px;border-radius:6px;font-weight:600;">Казахстан</span>
+                    <span style="font-size:12px;background:var(--blue-pale);color:var(--blue);padding:4px 10px;border-radius:6px;font-weight:600;">B2B специалист</span>
+                </div>
+            </div>
+            <div>
+                <div class="section-label">О консультанте</div>
+                <h2 style="margin-bottom:16px;">Я понял, как перехитрить конкурентов в нише видеонаблюдения</h2>
+                <p style="font-size:15px;color:var(--text2);margin-bottom:14px;line-height:1.75;">Меня зовут Рамазан. Я начинал как таргетолог и работал с десятками компаний из разных ниш. Настраивал рекламу. Получал заявки. Но видел, как деньги уходят в трубу — потому что нет системы.</p>
+                <p style="font-size:15px;color:var(--text2);margin-bottom:14px;line-height:1.75;">Затем я начал изучать маркетинг целиком: позиционирование, воронки, B2B-продажи. И понял: <strong>реклама — это 20% успеха. Остальные 80% — это то, что происходит ДО и ПОСЛЕ клика.</strong></p>
+                <p style="font-size:15px;color:var(--text2);margin-bottom:20px;line-height:1.75;">Ниша видеонаблюдения — одна из самых недооценённых в Казахстане. Рынок безопасности растёт на 20–30% ежегодно. <strong>Те, кто выстроит систему сейчас — заберут рынок</strong>. Те, кто будет ждать — останутся с сарафаном.</p>
+                <div class="grid-2" style="gap:12px;">
+                    <div class="proof">
+                        <div class="proof-num">5+</div>
+                        <div class="proof-label">лет в маркетинге</div>
+                    </div>
+                    <div class="proof">
+                        <div class="proof-num">20+</div>
+                        <div class="proof-label">компаний проконсультировал</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>@media(max-width:680px){.container>div[style*="260px"]{grid-template-columns:1fr!important}}</style>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ШАГ 4 — ТАРИФ (ЦЕНА И СОСТАВ)
+═══════════════════════════════════════════ -->
+<section class="section section-gray" id="tariff">
+    <div class="container">
+        <div class="text-center fade mb-4">
+            <div class="section-label">Предложение</div>
+            <h2>Вот что конкретно вы получаете</h2>
+        </div>
+
+        <div class="tariff fade">
+            <div class="tariff-label">Стратегическая консультация</div>
+            <div class="tariff-title">«Камера на Миллион» — 2 часа один на один</div>
+
+            <div class="tariff-item">Аудит текущей ситуации — где теряются заявки и деньги прямо сейчас</div>
+            <div class="tariff-item">Разработка УТП и позиционирования без снижения цен</div>
+            <div class="tariff-item">Стратегия 2–3 рабочих канала привлечения B2B под ваш город</div>
+            <div class="tariff-item">Структура воронки продаж от объявления до договора</div>
+            <div class="tariff-item">Декомпозиция цели: сколько заявок, встреч и рекламы нужно для вашей цели</div>
+            <div class="tariff-item">Реальные примеры рекламы и офферов, которые работают в нише</div>
+            <div class="tariff-item" style="color:var(--green);font-weight:700;">Письменный итог консультации + поддержка 14 дней</div>
+
+            <div class="tariff-price-wrap">
+                <div class="tariff-old">Обычная стоимость: 50 000 ₸</div>
+                <div class="tariff-price"><small>₸</small>25 000</div>
+                <div class="tariff-note">Провожу лично · Только 7 консультаций в месяц</div>
+            </div>
+
+            <button class="btn btn-lg btn-full pulse" onclick="openQ()">ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ →</button>
+            <p style="text-align:center;font-size:12px;color:var(--text3);margin-top:8px;">Нажав кнопку, вы только оставляете заявку. Оплата после подтверждения.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ШАГ 5 — БОНУСЫ С FOMO
+═══════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div class="text-center fade mb-4">
+            <div class="section-label">🎁 Только для записавшихся сейчас</div>
+            <h2>5 бонусов, которые вы потеряете,<br>если отложите на потом</h2>
+            <p class="mt-2 text-muted">Эти бонусы действуют только для тех, кто запишется <strong>до конца этого месяца.</strong></p>
+        </div>
+
+        <div class="fade">
+            <div class="bonus">
+                <div class="bonus-tag">🎁 Бонус 1</div>
+                <div class="bonus-title">Готовые скрипты холодного обращения к B2B клиентам</div>
+                <div class="bonus-desc">Скрипты звонка, письма и первого сообщения в WhatsApp для директоров, управляющих ТЦ и руководителей КСК. Уже протестированы — конверсия в ответ 35–55%.</div>
+                <div class="bonus-val">Стоимость: 15 000 ₸ → Ваша цена: 0 ₸</div>
+            </div>
+            <div class="bonus">
+                <div class="bonus-tag">🎁 Бонус 2</div>
+                <div class="bonus-title">Шаблон коммерческого предложения под корпоративных клиентов</div>
+                <div class="bonus-desc">КП, которое открывают и читают до конца. Структура, которая закрывает 3 главных возражения B2B клиентов ещё до встречи. В формате Word — редактируйте под себя.</div>
+                <div class="bonus-val">Стоимость: 12 000 ₸ → Ваша цена: 0 ₸</div>
+            </div>
+            <div class="bonus">
+                <div class="bonus-tag">🎁 Бонус 3</div>
+                <div class="bonus-title">База целевых сегментов Казахстана для ниши видеонаблюдения</div>
+                <div class="bonus-desc">Таблица с 12 сегментами бизнеса, которые ставят камеры регулярно: кто они, какая у них боль, какой оффер работает, где их найти в вашем городе.</div>
+                <div class="bonus-val">Стоимость: 8 000 ₸ → Ваша цена: 0 ₸</div>
+            </div>
+            <div class="bonus">
+                <div class="bonus-tag">🎁 Бонус 4</div>
+                <div class="bonus-title">Разбор рекламного кабинета + рекомендации</div>
+                <div class="bonus-desc">Смотрю на ваши текущие объявления (если они есть) и даю конкретные правки: что убрать, что изменить, что протестировать. Письменно после консультации.</div>
+                <div class="bonus-val">Стоимость: 20 000 ₸ → Ваша цена: 0 ₸</div>
+            </div>
+            <div class="bonus" style="border-color:#F59E0B;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);">
+                <div class="bonus-tag" style="color:#B45309;">🔥 Бонус 5 — ГЛАВНЫЙ</div>
+                <div class="bonus-title">Приоритетный доступ к продолжению работы</div>
+                <div class="bonus-desc">Те, кто запишется до конца месяца, получают право первыми занять место в моей программе сопровождения на 3 месяца (если решите продолжить). Новых клиентов берут в лист ожидания.</div>
+                <div class="bonus-val">Бесценно — не продаётся отдельно</div>
+            </div>
+        </div>
+
+        <div class="card card-red fade mt-6 text-center" style="max-width:680px;margin:20px auto 0;">
+            <p style="font-weight:700;font-size:16px;margin-bottom:4px;">Суммарная стоимость бонусов: <span style="text-decoration:line-through;color:var(--text3);">55 000 ₸</span></p>
+            <p style="color:var(--red);font-weight:800;font-size:14px;">Остаются у вас НАВСЕГДА даже если захотите вернуть деньги за консультацию</p>
+        </div>
+
+        <div class="text-center mt-6 fade">
+            <button class="btn btn-lg pulse" onclick="openQ()">ЗАБРАТЬ ВСЕ 5 БОНУСОВ →</button>
+            <p class="mt-2" style="font-size:12px;color:var(--text3);">Предложение действует до: <strong id="countdown" style="color:var(--red);">загрузка...</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ГАРАНТИЯ
+═══════════════════════════════════════════ -->
+<section class="section section-gray">
+    <div class="container">
+        <div class="guarantee fade">
+            <div style="font-size:52px;margin-bottom:12px;">🛡️</div>
+            <h2 style="color:white;margin-bottom:12px;">Гарантия возврата 100%</h2>
+            <p style="color:rgba(255,255,255,.85);font-size:16px;max-width:520px;margin:0 auto 20px;">Если после консультации вы скажете: «Не получил никаких новых инсайтов и конкретного плана» — верну 100% стоимости в течение 24 часов. Без вопросов.</p>
+            <div style="display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:var(--r);padding:12px 20px;">
+                <p style="color:white;font-size:14px;margin:0;">Вы рискуете суммой похода с семьёй в ресторан (25 000 ₸)<br>Получаете — стратегию роста на миллионы тенге</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     P.S. — ДОЖИМ
+═══════════════════════════════════════════ -->
+<section class="section">
+    <div class="container-sm fade">
+        <div class="ps ps-blue">
+            <strong>P.S.</strong> Каждый месяц без системы — это как минимум 1–3 корпоративных объекта, которые уходят к конкуренту. При среднем чеке 400 000 ₸ — это от 400 000 до 1 200 000 ₸ упущенной прибыли ежемесячно. Сколько таких месяцев вы уже потеряли?
+        </div>
+        <div class="ps ps-green">
+            <strong>P.P.S.</strong> Бонусы на сумму 55 000 ₸ получают только те, кто записывается до конца месяца. После — они войдут в стоимость или уберутся из предложения. Это не маркетинговый приём — это логика: я хочу работать с теми, кто принимает решения быстро.
+        </div>
+        <div class="text-center mt-6">
+            <button class="btn btn-lg pulse" onclick="openQ()">ЗАПИСАТЬСЯ ПРЯМО СЕЙЧАС →</button>
+            <p class="mt-2" style="font-size:12px;color:var(--text3);">25 000 ₸ · Гарантия возврата 100% · Только 7 мест в месяц</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--bg3);border-top:1px solid var(--border);padding:28px 20px;text-align:center;">
+    <p style="font-size:13px;color:var(--text3);margin-bottom:4px;"><strong>📷 Камера на Миллион</strong> — Маркетинг для компаний по видеонаблюдению · Казахстан</p>
+    <p style="font-size:12px;color:var(--text3);">© 2025. Отправляя форму, вы соглашаетесь на обработку персональных данных.</p>
+</footer>
+
+<!-- STICKY BOTTOM -->
+<div class="sticky-bottom" id="sticky-b">
+    <div class="sticky-bottom-text">25 000 ₸ · <span>Гарантия 100%</span> · Осталось мест: <strong style="color:var(--red);">5</strong></div>
+    <button class="btn" onclick="openQ()">Записаться</button>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MODAL — КВИЗ
+═══════════════════════════════════════════ -->
+<div class="modal-wrap" id="modal">
+    <div class="modal">
+        <button class="modal-x" onclick="closeQ()">✕</button>
+
+        <div class="quiz-step on" id="q1">
+            <div class="quiz-prog"><div class="quiz-bar" style="width:25%"></div></div>
+            <div class="quiz-label">Вопрос 1 из 4</div>
+            <div class="quiz-q">Откуда сейчас приходят клиенты?</div>
+            <div class="opt" onclick="next(1,'sarafan')">🗣️ Сарафан / рекомендации</div>
+            <div class="opt" onclick="next(1,'repeat')">🔄 Повторные клиенты</div>
+            <div class="opt" onclick="next(1,'ads')">📢 Реклама (работает плохо)</div>
+            <div class="opt" onclick="next(1,'none')">😔 Клиентов мало / нет стабильности</div>
+        </div>
+
+        <div class="quiz-step" id="q2">
+            <div class="quiz-prog"><div class="quiz-bar" style="width:50%"></div></div>
+            <div class="quiz-label">Вопрос 2 из 4</div>
+            <div class="quiz-q">Какой сегмент клиентов приоритетен для вас?</div>
+            <div class="opt" onclick="next(2,'b2c')">🏠 Физлица (квартиры, дома)</div>
+            <div class="opt" onclick="next(2,'b2b_small')">🏪 Малый бизнес (магазины, кафе)</div>
+            <div class="opt" onclick="next(2,'b2b_big')">🏢 Крупный B2B (ТЦ, заводы, ЖК)</div>
+            <div class="opt" onclick="next(2,'all')">💎 Хочу всё — нужна стратегия</div>
+        </div>
+
+        <div class="quiz-step" id="q3">
+            <div class="quiz-prog"><div class="quiz-bar" style="width:75%"></div></div>
+            <div class="quiz-label">Вопрос 3 из 4</div>
+            <div class="quiz-q">Текущая выручка компании в месяц?</div>
+            <div class="opt" onclick="next(3,'<1m')">До 1 млн ₸/мес</div>
+            <div class="opt" onclick="next(3,'1-3m')">1–3 млн ₸/мес</div>
+            <div class="opt" onclick="next(3,'3-10m')">3–10 млн ₸/мес</div>
+            <div class="opt" onclick="next(3,'10m+')">Более 10 млн — хочу масштаб</div>
+        </div>
+
+        <div class="quiz-step" id="q4">
+            <div class="quiz-prog"><div class="quiz-bar" style="width:100%"></div></div>
+            <div class="quiz-label">Вопрос 4 из 4</div>
+            <div class="quiz-q">Куда написать с результатами и для записи?</div>
+            <p style="font-size:13px;color:var(--text3);margin-bottom:14px;">Введите WhatsApp — отвечу лично в течение 2 часов:</p>
+            <input type="tel" class="form-inp" id="q-phone" placeholder="+7 (___) ___-__-__">
+            <input type="text" class="form-inp" id="q-name" placeholder="Ваше имя и название компании">
+            <button class="btn btn-full pulse" onclick="submit()">ПОЛУЧИТЬ СТРАТЕГИЮ →</button>
+            <p class="form-hint">Нажимая, вы соглашаетесь на обработку данных</p>
+        </div>
+
+        <div class="success-state" id="q-ok">
+            <div style="font-size:60px;margin-bottom:12px;">🎯</div>
+            <h2 style="margin-bottom:8px;">Заявка принята!</h2>
+            <p style="color:var(--text3);margin-bottom:20px;">Напишу в WhatsApp в течение 2 часов. Готовьтесь — разберём вашу ситуацию по-настоящему!</p>
+            <button class="btn" onclick="closeQ()">Закрыть</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Progress bar
+    window.addEventListener('scroll', () => {
+        const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+        document.getElementById('progress').style.width = pct + '%';
+
+        // Sticky bottom
+        const heroH = document.querySelector('.hero').offsetHeight;
+        const tariffTop = document.getElementById('tariff').getBoundingClientRect().top;
+        const sb = document.getElementById('sticky-b');
+        if (window.scrollY > heroH && tariffTop > window.innerHeight) sb.classList.add('show');
+        else sb.classList.remove('show');
+    });
+
+    // Fade in observer
+    document.querySelectorAll('.fade').forEach(el => {
+        new IntersectionObserver(e => { if (e[0].isIntersecting) el.classList.add('in'); }, { threshold: 0.1 }).observe(el);
+    });
+
+    // Modal
+    function openQ() {
+        document.getElementById('modal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+        // reset
+        answers = {};
+        document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('on'));
+        document.getElementById('quiz-success') && document.getElementById('quiz-success').classList.remove('on');
+        document.getElementById('q-ok').classList.remove('on');
+        document.getElementById('q1').classList.add('on');
+        document.getElementById('q-phone').value = '';
+        document.getElementById('q-name').value = '';
+    }
+    function closeQ() {
+        document.getElementById('modal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    document.getElementById('modal').addEventListener('click', e => { if (e.target === e.currentTarget) closeQ(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQ(); });
+
+    // Quiz logic
+    let answers = {};
+    function next(step, val) {
+        answers['q' + step] = val;
+        document.getElementById('q' + step).classList.remove('on');
+        const nx = document.getElementById('q' + (step + 1));
+        if (nx) nx.classList.add('on');
+    }
+    function submit() {
+        const phone = document.getElementById('q-phone').value;
+        const name = document.getElementById('q-name').value;
+        if (phone.replace(/\D/g, '').length < 10) { alert('Введите корректный номер WhatsApp'); return; }
+        if (!name.trim()) { alert('Введите имя и название компании'); return; }
+
+        // Ответы квиза в читаемом виде
+        const srcMap = { sarafan: 'Сарафан / рекомендации', repeat: 'Повторные клиенты', ads: 'Реклама (работает плохо)', none: 'Мало / нет стабильности' };
+        const segMap = { b2c: 'Физлица', b2b_small: 'Малый бизнес', b2b_big: 'Крупный B2B (ТЦ, заводы, ЖК)', all: 'Хочу всё — нужна стратегия' };
+        const revMap = { '<1m': 'До 1 млн ₸/мес', '1-3m': '1–3 млн ₸/мес', '3-10m': '3–10 млн ₸/мес', '10m+': 'Более 10 млн ₸' };
+
+        const src = srcMap[answers.q1] || answers.q1 || 'не указано';
+        const seg = segMap[answers.q2] || answers.q2 || 'не указано';
+        const rev = revMap[answers.q3] || answers.q3 || 'не указано';
+
+        const text =
+`Привет! Заполнил анкету на сайте «Камера на Миллион» 👋
+
+Имя / Компания: ${name}
+Мой WhatsApp: ${phone}
+
+📋 Ответы на анкету:
+1. Откуда клиенты: ${src}
+2. Целевой сегмент: ${seg}
+3. Выручка сейчас: ${rev}
+
+Хочу записаться на стратегическую консультацию.`;
+
+        // Открываем WhatsApp с заполненным сообщением
+        const waUrl = 'https://wa.me/77076042677?text=' + encodeURIComponent(text);
+        window.open(waUrl, '_blank');
+
+        // Показываем экран успеха
+        document.getElementById('q4').classList.remove('on');
+        document.getElementById('q-ok').classList.add('on');
+    }
+
+    // Phone mask
+    document.getElementById('q-phone').addEventListener('input', function(e) {
+        let d = e.target.value.replace(/\D/g, '').substring(0, 11);
+        if (!d) { e.target.value = ''; return; }
+        let f = '+7';
+        if (d.length > 1) f += ' (' + d.substring(1, 4);
+        if (d.length >= 4) f += ') ' + d.substring(4, 7);
+        if (d.length >= 7) f += '-' + d.substring(7, 9);
+        if (d.length >= 9) f += '-' + d.substring(9, 11);
+        e.target.value = f;
+    });
+
+    // Countdown — до конца месяца
+    function updateCountdown() {
+        const now = new Date();
+        const end = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+        const diff = end - now;
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const el = document.getElementById('countdown');
+        if (el) el.textContent = `${d}д ${h}ч ${m}мин`;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+</script>
+
+</body>
+</html>
